@@ -41,7 +41,6 @@ function fillMatrix(n, m) {
         matrix.push([]);
         for (var j = 0; j < m; j++) {
             matrix[i].push(0)
-
         }
     }
     return matrix
@@ -72,9 +71,9 @@ for (var d = 0; d < 50; d++) {
 }
 
 
-    var xy = Math.floor(Math.random() * 50)
-    var yx = Math.floor(Math.random() * 50)
-    matrix[y][x] = 5
+var xy = Math.floor(Math.random() * 50)
+var yx = Math.floor(Math.random() * 50)
+matrix[y][x] = 5
 
 
 
@@ -162,8 +161,6 @@ function draw() {
 
             rect(x * side, y * side, side, side);
 
-
-
         }
     }
 
@@ -195,6 +192,5 @@ function draw() {
     for (var i in ojArr) {
         ojArr[i].eat()
         ojArr[i].move()
-
     }
 }

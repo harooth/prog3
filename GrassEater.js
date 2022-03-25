@@ -1,26 +1,15 @@
-class Xotaker extends LivingCreature {
-    super(x,y,index);
+let LivingCreature = require("./LivingCreature");
 
-    getNewDirection(){
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
-
-    chooseCell(character) {
-        this.getNewDirection()
-        super.chooseCell(character);
+module.exports = class Xotaker extends LivingCreature {
+    constructor(x,y,index) {
+        super(x,y,index);
+        this.energy = 8;
     }
 
     bazmanal() {
-        var empty = random(this.chooseCell(0))
+        var empty = super.chooseCell(0);
+		var newCell = empty[Math.floor(Math.random() * empty.length)]
+        // var empty = random(this.chooseCell(0))
         this.multiply++;
         if (empty && this.multiply > 6) {
 
@@ -33,9 +22,11 @@ class Xotaker extends LivingCreature {
         }
     }
 
-
     move(){
-        var empty = random(this.chooseCell(0))
+        // var empty = random(this.chooseCell(0))
+        var empty = super.chooseCell(0);
+        var newCell = empty[Math.floor(Math.random() * empty.length)]
+        
         this.energy--
         if(empty){
             var newX = empty[0]
@@ -49,7 +40,10 @@ class Xotaker extends LivingCreature {
 
 
     eat(){
-        var gr = random(this.chooseCell(1))
+        // var gr = random(this.chooseCell(1))
+        var empty= super.chooseCell(1);
+        var newCell = empty[Math.floor(Math.random() * empty.length)]
+        
         if(gr){
             this.energy++
             var newX = gr[0]
