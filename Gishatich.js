@@ -1,14 +1,14 @@
 let LivingCrature = require("./LivingCreature")
 
-module.exports = class Gishatich {
+module.exports = class Gishatich extends LivingCrature {
     constructor(x, y, index) {
         super(x,y,index)
     }
 
     bazmanal() {
-        // var empty = random(this.chooseCell(2))
-        var empty = super.chooseCell(2);
-        var newCell = empty[Math.floor(Math.random() * empty.length)]
+        var empty = random(this.chooseCell(2))
+        // var empty = super.chooseCell(2);
+        // var newCell = empty[Math.floor(Math.random() * empty.length)]
         
         this.multiply++;
         if (newCell && this.multiply > 5) {
@@ -21,9 +21,9 @@ module.exports = class Gishatich {
     }
 
     move(){
-        // var empty = random(this.chooseCell(0)) || random(this.chooseCell(1))
+        var empty = random(this.chooseCell(0)) || random(this.chooseCell(1))
         
-        var empty = super.chooseCell(0);
+        // var empty = super.chooseCell(0);
         // var newCell = empty[Math.floor(Math.random() * empty.length)]
 
         this.energy--
@@ -38,8 +38,8 @@ module.exports = class Gishatich {
     }
 
     eat(){
-        // var gishatich = random(this.chooseCell(2))
-        var gishatich = super.chooseCell(2);
+        var gishatich = random(this.chooseCell(2))
+        // var gishatich = super.chooseCell(2);
         // var newCell = empty[Math.floor(Math.random() * empty.length)]
         
         if(gishatich){

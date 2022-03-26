@@ -7,9 +7,9 @@ module.exports = class Xotaker extends LivingCreature {
     }
 
     bazmanal() {
-        var empty = super.chooseCell(0);
-		var newCell = empty[Math.floor(Math.random() * empty.length)]
-        // var empty = random(this.chooseCell(0))
+        // var empty = super.chooseCell(0);
+		// var newCell = empty[Math.floor(Math.random() * empty.length)]
+        var empty = random(this.chooseCell(0))
         this.multiply++;
         if (empty && this.multiply > 6) {
 
@@ -23,9 +23,9 @@ module.exports = class Xotaker extends LivingCreature {
     }
 
     move(){
-        // var empty = random(this.chooseCell(0))
-        var empty = super.chooseCell(0);
-        var newCell = empty[Math.floor(Math.random() * empty.length)]
+        var empty = random(this.chooseCell(0))
+        // var empty = super.chooseCell(0);
+        // var newCell = empty[Math.floor(Math.random() * empty.length)]
         
         this.energy--
         if(empty){
@@ -40,9 +40,9 @@ module.exports = class Xotaker extends LivingCreature {
 
 
     eat(){
-        // var gr = random(this.chooseCell(1))
-        var empty= super.chooseCell(1);
-        var newCell = empty[Math.floor(Math.random() * empty.length)]
+        var gr = random(this.chooseCell(1))
+        // var empty= super.chooseCell(1);
+        // var newCell = empty[Math.floor(Math.random() * empty.length)]
         
         if(gr){
             this.energy++

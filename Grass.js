@@ -6,8 +6,8 @@ module.exports = class Grass extends LivingCreature {
     }
 
     bazmanal() {
-        // var empty = random(this.chooseCell(0))
-        var empty = super.chooseCell(2);
+        var empty = random(this.chooseCell(0))
+        // var empty = super.chooseCell(2);
         // var newCell = empty[Math.floor(Math.random() * empty.length)]
         this.multiply++;
         if (empty && this.multiply > 2) {

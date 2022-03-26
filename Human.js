@@ -1,10 +1,8 @@
 let LivingCreature = require('./LivingCreature')
 
-module.exports = class Human {
+module.exports = class Human extends LivingCreature {
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
+        super(x,y,index)
         this.multiply = 1;
         this.energy = 9;
 
